@@ -1,21 +1,21 @@
-# TypeScript Core (tscr)
+# TypeScript Core Lib
 
-TypeScript Core (tscr) is a versatile library designed to enhance the development experience when working with
+TypeScript Core Lib (tsclib) is a versatile library designed to enhance the development experience when working with
 TypeScript projects. This comprehensive library offers essential functionalities that go beyond the standard ECMAScript,
 providing developers with a robust set of tools. From streamlined methods for rounding numbers to managing sealed arrays
-and maps, tscr covers a wide array of utilities. Additionally, it introduces LINQ-like features and an array of other
+and maps, tsclib covers a wide array of utilities. Additionally, it introduces LINQ-like features and an array of other
 functions, filling the gaps in ECMAScript standardization.
 
 ## Installation
 
 ```bash
 # Install with npm
-npm install tscr
+npm install tsclib
 ```
 
 ```bash
 # Install with yarn
-yarn add tscr
+yarn add tsclib
 ```
 
 ## NPM scripts
@@ -156,5 +156,5 @@ npm run build
 
 ## Thanks
 
-Thanks to all those who have [contributed](https://github.com/Christoph-Koschel/tscr/graphs/contributors) to the further
+Thanks to all those who have [contributed](https://github.com/Christoph-Koschel/tsclib/graphs/contributors) to the further
 development of this library.
