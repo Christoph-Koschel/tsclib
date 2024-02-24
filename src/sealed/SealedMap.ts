@@ -4,11 +4,10 @@ import {
     ReturnIsTrue,
     ForEachFunction,
     ItemNotFoundError,
-    isInt,
     NotAnIntegerError,
     OutOfRangeError,
     UnreachableException,
-    OutOfCapacityError
+    OutOfCapacityError, Integer
 } from '../index';
 
 export class SealedMap<K, V, L extends number> implements ISealedMap<K, V, L>, IIterable<V, K, SealedMap<K, V, L>> {
@@ -23,7 +22,7 @@ export class SealedMap<K, V, L extends number> implements ISealedMap<K, V, L>, I
      * @throws {NotAnIntegerError} Throws an error if the provided length is not an integer.
      */
     public constructor(length: L) {
-        if (!isInt(length)) {
+        if (!Integer.isInt(length)) {
             throw new NotAnIntegerError(length);
         }
 
@@ -79,7 +78,7 @@ export class SealedMap<K, V, L extends number> implements ISealedMap<K, V, L>, I
     }
 
     removeAt(x: number): void {
-        if (!isInt(x)) {
+        if (!Integer.isInt(x)) {
             throw new NotAnIntegerError(x);
         }
 
@@ -93,7 +92,7 @@ export class SealedMap<K, V, L extends number> implements ISealedMap<K, V, L>, I
     }
 
     tryRemoveAt(x: number): boolean {
-        if (!isInt(x) || x < 0 || x >= this.length) {
+        if (!Integer.isInt(x) || x < 0 || x >= this.length) {
             return false;
         }
 

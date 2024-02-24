@@ -2,7 +2,6 @@ import {
     ISealedArray,
     ForEachFunction,
     IIterable,
-    isInt,
     ReturnAEqB,
     ReturnIsTrue,
     NotAnIntegerError,
@@ -19,7 +18,7 @@ import {
     selectMany,
     where,
     until,
-    count, FIRST_FUNCTION, first, LAST_FUNCTION, last, ILINQ, SELECT_MANY_FUNCTION
+    count, FIRST_FUNCTION, first, LAST_FUNCTION, last, ILINQ, SELECT_MANY_FUNCTION, Integer
 } from '../index';
 
 /**
@@ -44,7 +43,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
      * @throws {NotAnIntegerError} Throws an error if the provided length is not an integer.
      */
     public constructor(length: L) {
-        if (!isInt(length)) {
+        if (!Integer.isInt(length)) {
             throw new NotAnIntegerError(length);
         }
         this._length = length;
@@ -145,7 +144,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
     }
 
     removeAt(x: number): void {
-        if (!isInt(x)) {
+        if (!Integer.isInt(x)) {
             throw new NotAnIntegerError(x);
         }
         if (x < 0 || x >= this.length) {
@@ -157,7 +156,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
     }
 
     tryRemoveAt(x: number): boolean {
-        if (!isInt(x) || x < 0 || x >= this.length) {
+        if (!Integer.isInt(x) || x < 0 || x >= this.length) {
             return false;
         }
 
@@ -169,7 +168,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
     }
 
     set(n: number, x: T): void {
-        if (!isInt(n)) {
+        if (!Integer.isInt(n)) {
             throw new NotAnIntegerError(n);
         }
         if (n < 0 || n >= this.length) {
@@ -181,7 +180,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
     }
 
     trySet(n: number, x: T): boolean {
-        if (!isInt(n) || n < 0 || n >= this.length) {
+        if (!Integer.isInt(n) || n < 0 || n >= this.length) {
             return false;
         }
         this.items[n] = x;
@@ -189,7 +188,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
     }
 
     get(n: number): T {
-        if (!isInt(n)) {
+        if (!Integer.isInt(n)) {
             throw new NotAnIntegerError(n);
         }
         if (n < 0 || n >= this.length) {
@@ -203,7 +202,7 @@ export class SealedArray<T, L extends number> implements ISealedArray<T, L>, IIt
     }
 
     tryGet<B extends boolean>(n: number): [found: B, value: ReturnIsTrue<B, T, null>] {
-        if (!isInt(n) || n < 0 || n >= this.length) {
+        if (!Integer.isInt(n) || n < 0 || n >= this.length) {
             return [false as B, null as ReturnAEqB<B, true, T, null>];
         }
         return [true as B, this.items[n] as ReturnAEqB<B, true, T, null>];
