@@ -10,12 +10,12 @@ functions, filling the gaps in ECMAScript standardization.
 
 ```bash
 # Install with npm
-npm install tsclib
+npm install ts-core-lib
 ```
 
 ```bash
 # Install with yarn
-yarn add tsclib
+yarn add ts-core-lib
 ```
 
 ## NPM scripts

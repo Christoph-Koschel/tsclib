@@ -1,5 +1,5 @@
 {
-    "name": "tsc-core-lib",
+    "name": "ts-core-lib",
     "version": "1.0.0",
     "description": "Library that enhance the development experience when working with TypeScript projects.",
     "main": "lib/main/index.js",
