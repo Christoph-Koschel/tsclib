@@ -1,4 +1,4 @@
-import { ReturnIsTrue } from '../returns';
+import { ReturnIsTrue } from '../flow/returns';
 
 /**
  * Interface for a SealedArray with elements of type T and a specified length L.
