@@ -94,7 +94,7 @@ export * from './MyClass.ts';
 ```
 
 ```typescript
-// src/example/MyClass
+// src/example/MyClass.ts
 
 // Best way is to import the hole lib itself
 import { isInt, NotAnIntegerError } from '../index';
@@ -129,6 +129,12 @@ import { MyClass } from '../index';
 test("MyClass.sum returns correct values", (t) => {
     t.assert(MyClass.sum(1, 2) == 3);
 });
+```
+
+If you want that your module is loaded automatically add the following line:
+```typescript
+// src/index.ts
+export * from "./example";
 ```
 
 Make sure to document your code so that TypeDoc can extract them and generate a documentation out of it.
